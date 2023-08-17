@@ -1,0 +1,23 @@
+﻿@model RentalApplication.Models.Car
+
+<h2>Car Details</h2>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Car ID</dt>
+        <dd class="col-sm-10">@Model.CarId</dd>
+
+        <dt class="col-sm-2">Make</dt>
+        <dd class="col-sm-10">@Model.Make</dd>
+
+        <dt class="col-sm-2">Model</dt>
+        <dd class="col-sm-10">@Model.Model</dd>
+
+        <dt class="col-sm-2">Year</dt>
+        <dd class="col-sm-10">@Model.Year</dd>
+    </dl>
+</div>
+
+<a asp-action="Index">Back to List</a>

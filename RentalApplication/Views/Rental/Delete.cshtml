@@ -1,0 +1,17 @@
+﻿@model RentalApplication.Models.Rental
+
+<h2>Delete Rental</h2>
+
+<div>
+    <h4>Are you sure you want to delete this rental?</h4>
+    <h4>@Model.Car.Make - @Model.Car.Model</h4>
+    <p>@Model.Customer.FirstName</p>
+    <p>Rental Date: @Model.RentalDate</p>
+    <p>Return Date: @Model.ReturnDate</p>
+</div>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="RentalId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index">Cancel</a>
+</form>

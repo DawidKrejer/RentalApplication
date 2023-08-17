@@ -1,0 +1,15 @@
+﻿@model RentalApplication.Models.Rental
+
+<h2>Rental Details</h2>
+
+<div>
+    <h4>Car: @Model.Car.Make - @Model.Car.Model</h4>
+    <p>Customer: @Model.Customer.FirstName</p>
+    <p>Rental Date: @Model.RentalDate</p>
+    <p>Return Date: @Model.ReturnDate</p>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RentalId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

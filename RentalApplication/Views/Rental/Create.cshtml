@@ -1,0 +1,33 @@
+﻿@model RentalApplication.Models.Rental
+
+<h2>Create Rental</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="CarId">Car</label>
+        @if (ViewBag.Cars != null)
+        {
+            @Html.DropDownListFor(model => model.CarId, ViewBag.Cars as SelectList, "-- Select Car --", new { @class = "form-control" })
+        }
+        <span asp-validation-for="CarId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerId">Customer</label>
+        @if (ViewBag.Customers != null)
+        {
+            @Html.DropDownListFor(model => model.CustomerId, ViewBag.Customers as SelectList, "-- Select Customer --", new { @class = "form-control" })
+        }
+        <span asp-validation-for="CustomerId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RentalDate">Rental Date</label>
+        <input asp-for="RentalDate" class="form-control" />
+        <span asp-validation-for="RentalDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReturnDate">Return Date</label>
+        <input asp-for="ReturnDate" class="form-control" />
+        <span asp-validation-for="ReturnDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

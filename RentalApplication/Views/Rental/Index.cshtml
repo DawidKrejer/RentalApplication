@@ -1,0 +1,35 @@
+﻿@model List<RentalApplication.Models.Rental>
+
+<h2>Rentals</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Car</th>
+            <th>Customer</th>
+            <th>Rental Date</th>
+            <th>Return Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rental in Model)
+        {
+            <tr>
+                <td>@rental.Car.Make @rental.Car.Model</td>
+                <td>@rental.Customer.FirstName</td>
+                <td>@rental.RentalDate</td>
+                <td>@rental.ReturnDate</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@rental.RentalId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@rental.RentalId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@rental.RentalId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

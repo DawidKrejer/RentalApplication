@@ -1,0 +1,29 @@
+﻿@model List<RentalApplication.Models.Customer>
+
+<h2>Customer List</h2>
+<a asp-action="Create">Create New</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+                <tr>
+                    <td>@customer.FirstName</td>
+                    <td>@customer.Email</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@customer.CustomerId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@customer.CustomerId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@customer.CustomerId">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
