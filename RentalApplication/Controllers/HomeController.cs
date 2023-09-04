@@ -21,20 +21,25 @@ namespace RentalApplication.Controllers
 
         public IActionResult Car()
         {
-            // Przekierowanie do akcji Index w kontrolerze Car
             return RedirectToAction("Index", "Car");
         }
 
         public IActionResult Customer()
         {
-            // Przekierowanie do akcji Index w kontrolerze Customer
             return RedirectToAction("Index", "Customer");
         }
 
         public IActionResult Rental()
         {
-            // Przekierowanie do akcji Index w kontrolerze Rental
             return RedirectToAction("Index", "Rental");
+        }
+        public IActionResult Register()
+        {
+            return RedirectToAction("Register", "Account");
+        }
+        public IActionResult Login()
+        {
+            return RedirectToAction("Login", "Account");
         }
     }
 }

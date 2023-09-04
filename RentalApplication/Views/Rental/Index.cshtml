@@ -9,6 +9,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Rental ID</th>
             <th>Car</th>
             <th>Customer</th>
             <th>Rental Date</th>
@@ -20,6 +21,7 @@
         @foreach (var rental in Model)
         {
             <tr>
+                <td>@rental.RentalId</td>
                 <td>@rental.Car.Make @rental.Car.Model</td>
                 <td>@rental.Customer.FirstName</td>
                 <td>@rental.RentalDate</td>
